@@ -23,7 +23,14 @@ public class copChaser : MonoBehaviour
                 GetComponent<NavMeshAgent>().speed = 15;
         }
         GetComponent<NavMeshAgent>().SetDestination(player.transform.position);
+        Vector3 angles = transform.eulerAngles;
+        angles.x = 0;
+        angles.z = 0;
+        transform.eulerAngles = angles;
         if (Vector3.Distance(transform.position, GetComponent<NavMeshAgent>().destination) < 1)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        {
+            player.transform.LookAt(transform);
+            SceneManager.LoadScene("GameEnd");
+        }
     }
 }

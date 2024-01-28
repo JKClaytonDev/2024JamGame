@@ -42,10 +42,11 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerPrefs.SetInt("CurrentScore", tickleCount);
         timerText.text = "Time: " + (int)(startTime - Time.realtimeSinceStartup + 30)+"\nTickles: " + tickleCount;
         if ((startTime - Time.realtimeSinceStartup + 30) < 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("GameEnd");
         }
         //if (Vector3.Distance(new Vector3(), GetComponent<Rigidbody>().velocity) < 0.1f)
         {

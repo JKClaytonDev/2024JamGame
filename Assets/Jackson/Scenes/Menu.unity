@@ -300,7 +300,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1518855579}
         m_TargetAssemblyTypeName: menuCoordinator, Assembly-CSharp
-        m_MethodName: loadScene
+        m_MethodName: loadIntroText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
