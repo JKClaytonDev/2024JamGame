@@ -8,4 +8,8 @@ public class menuCoordinator : MonoBehaviour
     {
         SceneManager.LoadScene("GameLevel");
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
