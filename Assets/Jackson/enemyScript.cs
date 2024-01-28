@@ -8,6 +8,7 @@ public class enemyScript : MonoBehaviour
     public float health;
     public void startLaugh()
     {
+        FindObjectOfType<playerController>().tickleCount++;
         anim.Play("Laugh" + (int)Random.Range(1, 6));
         Destroy(this);
     }

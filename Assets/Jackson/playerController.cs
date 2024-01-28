@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
+    public Text timerText;
     Rigidbody rb;
     public Camera cam;
     public Animator featherAnim;
     int righttickleNum;
     int lefttickleNum;
+    float startTime;
+    public int tickleCount = 0;
     // Start is called before the first frame update
     void Start()
     {
+        startTime = Time.realtimeSinceStartup;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
@@ -34,6 +40,11 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timerText.text = "Time: " + (int)(startTime - Time.realtimeSinceStartup + 30)+"\nTickles: " + tickleCount;
+        if ((startTime - Time.realtimeSinceStartup + 30) < 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         //if (Vector3.Distance(new Vector3(), GetComponent<Rigidbody>().velocity) < 0.1f)
         {
         righthandParent.transform.localPosition = new Vector3(((float)righttickleNum - 3) / 30, 0, 0);

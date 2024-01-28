@@ -44796,6 +44796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capsule
       objectReference: {fileID: 0}
+    - target: {fileID: 7912369401414220283, guid: 821ab218ba4c8cd41b6bc872ea8e584e, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 400619818}
     - target: {fileID: 8876189661279526559, guid: 821ab218ba4c8cd41b6bc872ea8e584e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.95
@@ -44900,6 +44904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96f5c1dc4ded7d4e80cdd42f7f2e65c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
   cam: {fileID: 0}
   featherAnim: {fileID: 0}
   defaultAngles: []
