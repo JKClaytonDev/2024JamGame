@@ -14,8 +14,9 @@ public class scoreMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "SCORE: " + PlayerPrefs.GetInt("CurrentScore") + "\nHIGHSCORE: " + PlayerPrefs.GetInt("Highscore");
+        scoreText.text = "SCORE: " + PlayerPrefs.GetInt("CurrentScore") + "\nHIGHSCORE: " + PlayerPrefs.GetInt("HighScore");
         if (PlayerPrefs.GetInt("CurrentScore") > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("CurrentScore"));
+        PlayerPrefs.Save();
     }
 }

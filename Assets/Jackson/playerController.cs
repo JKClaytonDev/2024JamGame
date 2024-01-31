@@ -43,8 +43,9 @@ public class playerController : MonoBehaviour
     void Update()
     {
         PlayerPrefs.SetInt("CurrentScore", tickleCount);
-        timerText.text = "Time: " + (int)(startTime - Time.realtimeSinceStartup + 30)+"\nTickles: " + tickleCount;
-        if ((startTime - Time.realtimeSinceStartup + 30) < 0)
+        PlayerPrefs.Save();
+        timerText.text = "Time: " + (int)(startTime - Time.realtimeSinceStartup + 60)+"\nTickles: " + tickleCount;
+        if ((startTime - Time.realtimeSinceStartup + 60) < 0)
         {
             SceneManager.LoadScene("GameEnd");
         }
@@ -132,7 +133,7 @@ public class playerController : MonoBehaviour
             cam.transform.eulerAngles += new Vector3(-Input.GetAxis("Mouse Y"), 0, 0);
         }
         if (Input.GetKey(KeyCode.Escape))
-            Application.Quit();
+            SceneManager.LoadScene("Menu");
         
         {
             
